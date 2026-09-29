@@ -1,11 +1,18 @@
 #[derive(Debug)]
 pub enum TokenValue {
-    NUM(f64),
-    ID(String),
-    OP(String)
+    Num(f64),
+    Id(String),
+    Op(String)
+}
+#[derive(Debug)]
+pub enum TokenType {
+    Num,
+    Id,
+    Op
 }
 #[derive(Debug)]
 pub struct Token {
-    pub kind: String,
-    pub value: TokenValue
+    pub kind: TokenType,
+    pub value: TokenValue,
+    pub line_num: i16
 }
